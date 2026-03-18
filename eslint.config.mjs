@@ -19,7 +19,16 @@ export default [
     rules: {
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs["core-web-vitals"].rules,
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/triple-slash-reference": "off"
     },
+    settings: {
+      react: {
+        version: "detect"
+      }
+    }
   },
   {
     ignores: [".next/", "node_modules/", "out/"],

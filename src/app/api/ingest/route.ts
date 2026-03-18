@@ -32,6 +32,11 @@ export async function POST(req: NextRequest) {
         category: String(item.category),
         subCategory: String(item.subCategory || ''),
         date: String(item.date),
+        timestamp: String(item.date),
+        payeeName: String(item.payeeName || ''),
+        site: String(item.site || ''),
+        recordedBy: String(item.recordedBy || ''),
+        recorderId: String(item.recorderId || ''),
         notes: String(item.notes || ''),
       };
     });
