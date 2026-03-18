@@ -1,5 +1,6 @@
 export interface Transaction {
   id: string;
+  date?: string; // The date of the transaction
   timestamp: string; // Raw data format, e.g., "8/15/2025 10:32:40"
   type: 'Expense' | 'Payment Received';
   amount: number;
@@ -9,6 +10,7 @@ export interface Transaction {
   site: string; // e.g., "Ludhiana"
   recordedBy: string; // e.g., "Gulshan"
   recorderId: string; // e.g., "5920057897"
+  notes?: string;
 }
 
 export interface Site {

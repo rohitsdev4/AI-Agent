@@ -1,0 +1,21 @@
+
+> my-app@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Port 3000 is in use by an unknown process, using available port 3002 instead.
+   ▲ Next.js 15.5.2 (Turbopack)
+   - Local:        http://localhost:3002
+   - Network:      http://192.168.0.2:3002
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1463ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.9s
+ GET / 200 in 7005ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 4.3s
+ GET /dashboard 200 in 4376ms
+ ○ Compiling /api/chat ...
+ ✓ Compiled /api/chat in 842ms
+ POST /api/chat 200 in 2924ms

@@ -18,7 +18,7 @@ export default function TransactionsTable({ transactions }: TransactionsTablePro
       (t) =>
         t.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
         t.subCategory.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        t.notes.toLowerCase().includes(searchTerm.toLowerCase())
+        (t.notes || '').toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [transactions, searchTerm]);
 

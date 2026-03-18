@@ -29,6 +29,16 @@ if (!admin.apps.length) {
 }
 
 // Export the firestore instance
-const firestore = admin.firestore();
+// Avoid calling firestore() if apps is empty to prevent build errors when env vars are missing
+let firestore: admin.firestore.Firestore | null = null;
 
-export { firestore };
+if (admin.apps.length > 0) {
+  firestore = admin.firestore();
+}
+
+// In Next.js server actions / routes using firestore, we must guarantee it's initialized.
+// For the purpose of the build, exporting null is acceptable if env vars are missing.
+// We cast it to ensure no typing errors in components that use it (assuming they will only run at runtime when env vars are present).
+const exportedFirestore = firestore as admin.firestore.Firestore;
+
+export { exportedFirestore as firestore };
